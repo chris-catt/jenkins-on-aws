@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><flow-definition>
+    <actions/>
+    <description/>
+    <keepDependencies>false</keepDependencies>
+    <properties/>
+    <triggers/>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition">
+        <script>
+pipeline {
+    agent none
+
+    stages {
+        stage('Test Default ECS Agent') {
+            agent {
+                label 'ecs'
+            }
+            steps {
+                echo 'Hello from Default Jenkins ECS Agent!'
+            }
+        }
+        stage('Test .NET Core SDK ECS Agent') {
+            agent {
+                label 'coresdk'
+            }
+            steps {
+                echo 'Hello from .NET Core Jenkins ECS Agent!'
+                echo 'Installed SDKs are:'
+                sh 'dotnet --list-sdks'
+                echo 'Installed Runtimes are:'
+                sh 'dotnet --list-runtimes'
+            }
+        }
+        stage('Test Node ECS Agent') {
+            agent {
+                label 'node'
+            }
+            steps {
+                echo 'Hello from Node Jenkins ECS Agent!'
+                echo 'Installed Node version is:'
+                sh 'node -v'
+                echo 'Installed NPM version is:'
+                sh 'npm -v'
+            }
+        }  
+    }
+}
+        </script>
+        <sandbox>true</sandbox>
+    </definition>
+</flow-definition>
