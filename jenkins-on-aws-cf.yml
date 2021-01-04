@@ -26,7 +26,7 @@ Parameters:
     Default: developer
   JenkinsURL:
     Type: String
-    Description: Public URL your Jenkins instance will take, e.g. https://jenkins.chriscatt.com
+    Description: Public URL your Jenkins instance will take, e.g. https://jenkins.sage.com
     Default: ""
   ClusterName:
     Type: String
