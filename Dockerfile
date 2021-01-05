@@ -1,5 +1,7 @@
 FROM jenkins/jenkins:lts-jdk11
 
+LABEL org.opencontainers.image.source https://github.com/chris-catt/jenkins-on-aws
+
 COPY jenkins-resources/plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 
