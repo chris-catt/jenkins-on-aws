@@ -34,7 +34,7 @@ Parameters:
   LeaderDockerImage:
     Type: String
     Description: Public Docker image to use for Jenkins leader. Leave unchanged if not building form source.
-    Default: ccatt601/jenkins-ecs:latest
+    Default: ghcr.io/chris-catt/jenkins-ecs:latest
   LeaderInstanceCPUAllocation:
     Type: Number
     Description: Number of CPU units to be allocated for the Jenkins leader
